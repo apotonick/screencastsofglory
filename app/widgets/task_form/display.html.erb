@@ -1,0 +1,8 @@
+<%= widget_div do %>
+  <%= form_for :task, :url => url_for_event(:submit), :remote => true do |f| %>
+    <%= f.text_field 'name' %>
+   
+    <%= submit_tag "New task!" %>
+  
+  <% end %> 
+<% end %>
