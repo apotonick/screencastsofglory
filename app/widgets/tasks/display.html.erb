@@ -1,0 +1,13 @@
+<%= widget_div do %>
+  <table>
+    <% for task in @tasks %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= link_to "Destroy", task, :confirm => 'Are you sure?', "data-event-url" => url_for_event(:destroy_task, :id => task.id) %></td>
+        <td><%= link_to "Mark as Complete", task, :confirm => 'Are you sure?', "data-event-url" => url_for_event(:complete_task, :id => task.id) if !task.completed? %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "Previous", "", "data-event-url" => url_for_event(:change_page, :page => @tasks.current_page-1) if @tasks.current_page > 1 %>
+  <%= link_to "Next", "", "data-event-url" => url_for_event(:change_page, :page => @tasks.current_page+1) if @tasks.current_page < @tasks.num_pages %>
+<% end %>
