@@ -2,6 +2,9 @@ class TasksController < ApplicationController
   has_widgets do |root|
     root << widget(:tasks)
     root << widget(:completed_tasks)
+    
+    root << widget(:task_form)
+    root << widget(:task_list)
   end
 
   def index
