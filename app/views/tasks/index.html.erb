@@ -1,16 +1,6 @@
-<% title "Tasks" %>
+<h1>
+  Tasks
+</h1>
 
-
-<h2>New Task</h2>
 <%= render_widget :task_form %>
 
-<h2>All Tasks</h2>
-<%= render_widget :task_list %>
-
-<h2>Incomplete Tasks</h2>
-<%= render_widget :tasks %>
-
-<h2>Completed Tasks</h2>
-<%= render_widget :completed_tasks %>
-
-<p><%= link_to "New Task", new_task_path %></p>
