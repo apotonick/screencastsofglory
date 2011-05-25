@@ -2,12 +2,23 @@ class TaskFormWidget < Apotomo::Widget
   responds_to_event :submit
   
   def display
-    render
+    #if Task.count < 3
+      render
+    #else
+    #  render({:state => :error}, "Yiha!")
+    #end
   end
+  
+  def error(arg)
+    @count = Task.count
+    render + arg
+  end
+  
   
   def submit(evt)
     task = Task.create(evt[:task])
-    replace :state => :display
+    
+    replace "#hello", :state => :display
   end
   
 
