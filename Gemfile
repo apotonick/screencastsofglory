@@ -38,6 +38,6 @@ end
 
 gem 'nifty-generators'
 gem "mocha", :group => :test
-gem "apotomo"
+gem "apotomo", ">= 1.2.0"
 gem "jquery-rails"
 gem "kaminari"

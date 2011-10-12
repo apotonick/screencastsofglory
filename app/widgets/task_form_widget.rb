@@ -7,6 +7,8 @@ class TaskFormWidget < Apotomo::Widget
   
   def submit(evt)
     task = Task.create(evt[:task])
+    trigger :newTask
+    
     replace :state => :display
   end
   
