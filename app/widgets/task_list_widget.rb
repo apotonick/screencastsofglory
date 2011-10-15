@@ -7,7 +7,7 @@ class TaskListWidget < Apotomo::Widget
   end
   
   def update(evt)
-    replace :state => :display
+    render :text => "$('##{widget_id} ul').append('<li>#{evt[:task].name}</li>')"
   end
 
 end
