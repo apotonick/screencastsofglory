@@ -7,7 +7,9 @@ class TaskListWidget < Apotomo::Widget
   end
   
   def update(evt)
-    render :text => "$('##{widget_id} ul').append('<li>#{evt[:task].name}</li>')"
+    li = render :view => :task, :locals => {:task => evt[:task]}
+    li = escape_js(li)
+    render :text => "$('##{widget_id} ul').append(\"#{li}\")"
   end
 
 end

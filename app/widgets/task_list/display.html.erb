@@ -3,9 +3,7 @@
   
   <ul>
     <% for task in @tasks %>
-      <li>
-        <%= task.name %>
-      </li>
+      <%= render :view => :task, :locals => {:task => task} %>
     <% end %>
   </ul>
 <% end %>
